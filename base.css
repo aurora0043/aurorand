@@ -23,7 +23,7 @@ h1.title {
 
 p {
   font-family: 'ContentFont', sans-serif;
-  font-size: 1.5rem; /* 更小字體 */
+  font-size: 1.75rem; /* 更小字體 */
   max-width: 400px;
   margin: 0 auto 2rem auto;
   
@@ -257,7 +257,7 @@ body.stars {
 
 @media (max-width: 480px) {
   .photo-collage {
-    column-count: 1;
+    column-count: 2;
   }
 }
 
