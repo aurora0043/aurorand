@@ -1,0 +1,335 @@
+/* base.css */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Princess+Sofia&display=swap');
+
+
+/**************************字體樣式**************************/
+
+
+h1.title {
+  font-family: 'Princess Sofia', cursive;
+  font-size: 4rem;
+  color: #D283A5;
+  margin: rem 0 0.2rem 0;
+}
+
+
+.subtitle {
+  font-size: 1rem; /* 更小字體 */
+  max-width: 400px;
+  margin: 0 auto 2rem auto;
+  color: #7B6CA4;
+  line-height: 1.5;
+}
+
+p {
+  font-family: 'ContentFont', sans-serif;
+  font-size: 1.5rem; /* 更小字體 */
+  max-width: 400px;
+  margin: 0 auto 2rem auto;
+  
+  line-height: 1.5;
+}
+
+h2{
+  font-family: 'ContentFont', sans-serif;
+  font-size: 3rem;
+  color: #6B4C9A;
+  margin-top: 1.5rem;  
+}
+
+/* 小標題樣式 */
+h3 {
+  font-family: 'ContentFont', sans-serif;
+  font-size: 2rem;
+  color: #6B4C9A;
+  margin-top: 1.5rem;
+}
+
+
+.note-box {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  box-shadow: 0 0 10px rgba(200, 150, 255, 0.3);
+  backdrop-filter: blur(4px);
+}
+
+@font-face {
+  font-family: 'ContentFont'; /* 這是你自己定義的名字 */
+  src: url('fonts/myFont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+
+/**************************ALL**************************/
+
+
+footer {
+  width: 100%;
+  text-align: center;
+  font-size: 0.875rem;
+  padding: 1rem;
+  background: #f6f8fc;
+  border-top: 1px dashed #ccc;
+  color: #999;
+  box-sizing: border-box; /* 保證 padding 不會影響寬度 */
+}
+
+
+/*漢堡選單*/
+.navbar {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+}
+
+
+.menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 3rem;
+  right: 0;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1rem 1.2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 16px rgba(123, 108, 164, 0.2);
+  animation: dropdownFade 0.3s ease-out forwards;
+  min-width: 160px;
+}
+
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.menu li {
+  margin: 0.6rem 0;
+}
+
+
+.menu li a {
+  text-decoration: none;
+  color: #7B6CA4;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+
+.menu li a:hover {
+  color: #A175C8;
+}
+
+
+body.stars {
+  background:
+    linear-gradient(135deg, #FEE3EC, #E8F4F8); /* 粉藍漸層 */
+  background-blend-mode: screen;
+  background-attachment: fixed;
+}
+
+
+@keyframes twinkle {
+  from { background-position: 0 0; }
+  to { background-position: 1000px 0; }
+}
+
+
+
+
+
+/**************************浮動圖案**************************/
+
+
+.floating-pngs {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+
+.float-item {
+  text-align: center;
+  position: absolute;
+  animation: wander 10s infinite ease-in-out;
+}
+
+
+.float-item img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+
+
+.float-item img:hover {
+  transform: scale(1.2) rotate(3deg);
+}
+
+
+.float-item p {
+  margin-top: 0.3rem;
+  font-size: 0.95rem;
+  color: #edc0d5;
+  text-decoration: none;
+}
+
+
+/* 防止 <a> 包含底線 */
+.float-item {
+  text-decoration: none;
+}
+.float-item:visited,
+.float-item:link {
+  text-decoration: none;
+}
+
+
+/* 自訂漂浮動畫：在各方向慢慢位移 */
+@keyframes wander {
+  0% { transform: translate(0px, 0px); }
+  25% { transform: translate(5px, -5px); }
+  50% { transform: translate(-5px, 5px); }
+  75% { transform: translate(10px, 0px); }
+  100% { transform: translate(0px, 0px); }
+}
+
+
+
+
+
+/**************************泡泡照片**************************/
+.bubble img {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+
+
+/**************************旅遊照片**************************/
+
+.photo-section {
+    margin: 2rem 0;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    color: #7B6CA4;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Masonry拼貼牆容器 */
+.photo-collage {
+  column-count: 3;
+  column-gap: 1.2rem;
+  padding: 1rem;
+}
+
+@media (max-width: 768px) {
+  .photo-collage {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .photo-collage {
+    column-count: 1;
+  }
+}
+
+/* 每張圖片的卡片 */
+.photo-item {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 1.2rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  transform: rotate(calc(-2deg + 4deg * var(--rand, 0.5)));
+}
+
+.photo-item:hover {
+  transform: scale(1.05) rotate(calc(-2deg + 4deg * var(--rand, 0.5)));
+}
+
+/* 圖片設定 */
+.photo-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.75rem;
+}
+
+/* 底下文字說明 */
+.photo-caption {
+  font-family: 'ContentFont', sans-serif;
+  padding: 0.5rem;
+  font-size: 1.1rem;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  color: #7B6CA4;
+  line-height: 1.4rem;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+
+
+/*auronotes*/
+
+    .auronotes {
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 1.5rem;
+      padding: 2rem;
+      margin: 3rem auto;
+      max-width: 800px;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 0 12px rgba(230, 200, 255, 0.4);
+      position: relative;
+    }
+
+    .auronotes::before {
+      content: '✦';
+      font-size: 2rem;
+      color: #edc0d5;
+      position: absolute;
+      top: -1rem;
+      left: -1rem;
+    }
+
+    .auronotes h3 {
+      margin-top: 1.5rem;
+      color: #7B6CA4;
+    }
+
+    @media (max-width: 768px) {
+      .auronotes {
+        margin: 2rem 1rem;
+      }
+    }

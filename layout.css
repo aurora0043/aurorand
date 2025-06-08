@@ -1,0 +1,167 @@
+/******首頁*******/
+.floating-icons {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+}
+
+.float-icon {
+  position: absolute;
+  width: 50px;
+  animation: floatIcon 12s infinite ease-in-out;
+  transition: transform 0.3s;
+}
+
+.float-icon img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 0 6px rgba(255,255,255,0.6));
+}
+
+.float-icon:hover {
+  transform: scale(1.2) rotate(10deg);
+}
+
+@keyframes floatIcon {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(2deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+/* 中心排版 */
+.center-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  text-align: center;
+}
+
+/* 固定圖示在 Aurorand 下方 */
+.fixed-icons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+.fixed-icons img {
+  width: 64px;
+  height: 64px;
+  transition: transform 0.3s;
+}
+.fixed-icons img:hover {
+  transform: scale(1.15);
+}
+
+/* 🍔 漢堡選單 */
+.navbar {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+}
+
+.menu-icon {
+  font-size: 2rem;
+  cursor: pointer;
+  color: #7B6CA4;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu {
+  display: none;
+  list-style: none;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 1rem;
+  padding: 1rem;
+  position: absolute;
+  top: 3rem;
+  right: 0;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#menu-toggle:checked + .menu-icon + .menu {
+  display: block;
+}
+
+.menu li {
+  margin: 0.5rem 0;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #6B4C9A;
+  font-weight: bold;
+}
+
+
+/* layout.css - 排版、格線、不規則拼貼 */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  margin-top: 5vh;
+}
+
+main {
+  width: 100%;
+  max-width: 960px;
+  padding: 1rem;
+  text-align: center;
+  flex: 1;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.photo {
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.photo:hover {
+  transform: scale(1.03);
+}
+
+.photo p {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.dream-bubbles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.bubble {
+  text-align: center;
+  width: 180px;
+  background: rgba(255,255,255,0.6);
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  backdrop-filter: blur(3px);
+  transition: transform 0.3s;
+}
+
+.bubble:hover {
+  transform: translateY(-5px);
+}
